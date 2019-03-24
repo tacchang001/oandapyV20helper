@@ -4,7 +4,8 @@ import pandas as pd
 
 from conf import PyOandaConfig
 
-_TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:00.000000000Z"
+# _TIMESTAMP_FORMAT = "%Y-%m-%dT%H:%M:00.000000000Z"
+_TIMESTAMP_FORMAT = '%Y-%m-%dT%H:%M:%S.%fZ'
 
 
 def get_candles(instrument, params):
@@ -34,6 +35,8 @@ def make_instruments_params(granularity, from_time=None, to_time=None, count=Non
         _params = _make_to_params(granularity, to_time=to_time)
     elif from_time is not None and to_time is None and count is not None:
         _params = _make_from_count_params(granularity, from_time=from_time, count=count)
+    elif from_time is None and to_time is not None and count is not None:
+        _params = _make_to_count_params(granularity, to_time=to_time, count=count)
     else:
         _params = {
             "granularity": granularity
@@ -71,6 +74,16 @@ def _make_from_count_params(granularity, from_time, count):
     return _params
 
 
+def _make_to_count_params(granularity, to_time, count):
+    _params = {
+        "to": to_time.strftime(_TIMESTAMP_FORMAT),
+        "count": count,
+        "granularity": granularity
+    }
+
+    return _params
+
+
 def main():
     from datetime import datetime
 
@@ -80,8 +93,8 @@ def main():
     _candles1 = to_dataframe(_candle_dict1)
     print(_candles1)
 
-    _from2 = datetime(2018, 4, 10, 0, 0, 0)
-    _to2 = datetime(2018, 4, 10, 12, 34, 56)
+    _from2 = datetime(2019, 3, 22, 18, 0, 0)
+    _to2 = datetime(2019, 3, 23, 6, 0, 0)
     _params2 = make_instruments_params("M15", from_time=_from2, to_time=_to2)
     _candle_dict2 = get_candles("USD_JPY", _params2)
     _candles2 = to_dataframe(_candle_dict2)
@@ -93,6 +106,13 @@ def main():
     _candle_dict3 = get_candles("USD_JPY", _params3)
     _candles3 = to_dataframe(_candle_dict3)
     print(_candles3)
+
+    _to4 = datetime(2018, 4, 10, 0, 0, 0)
+    _count4 = 40
+    _params4 = make_instruments_params("M15", to_time=_to4, count=_count4)
+    _candle_dict4 = get_candles("USD_JPY", _params4)
+    _candles4 = to_dataframe(_candle_dict4)
+    print(_candles4)
 
 
 if __name__ == "__main__":

@@ -1,0 +1,21 @@
+{
+  "tradeable": false,
+  "time": "2019-03-23T02:07:05.003417191Z",
+  "status": "non-tradeable",
+  "asks": [
+    {
+      "liquidity": 10000000,
+      "price": "1.13046"
+    }
+  ],
+  "instrument": "EUR_USD",
+  "type": "PRICE",
+  "bids": [
+    {
+      "liquidity": 10000000,
+      "price": "1.12980"
+    }
+  ],
+  "closeoutBid": "1.12965",
+  "closeoutAsk": "1.13061"
+}

@@ -1,0 +1,123 @@
+{
+  "tradeable": false,
+  "time": "2019-03-23T02:07:05.003417191Z",
+  "status": "non-tradeable",
+  "asks": [
+    {
+      "liquidity": 10000000,
+      "price": "1.13046"
+    }
+  ],
+  "instrument": "EUR_USD",
+  "type": "PRICE",
+  "bids": [
+    {
+      "liquidity": 10000000,
+      "price": "1.12980"
+    }
+  ],
+  "closeoutBid": "1.12965",
+  "closeoutAsk": "1.13061"
+},
+{
+  "tradeable": false,
+  "time": "2019-03-23T02:07:05.003174455Z",
+  "status": "non-tradeable",
+  "asks": [
+    {
+      "liquidity": 10000000,
+      "price": "124.274"
+    }
+  ],
+  "instrument": "EUR_JPY",
+  "type": "PRICE",
+  "bids": [
+    {
+      "liquidity": 10000000,
+      "price": "124.186"
+    }
+  ],
+  "closeoutBid": "124.186",
+  "closeoutAsk": "124.274"
+},
+{
+  "tradeable": false,
+  "time": "2019-03-23T02:07:05.002623699Z",
+  "status": "non-tradeable",
+  "asks": [
+    {
+      "liquidity": 50,
+      "price": "11323.8"
+    },
+    {
+      "liquidity": 50,
+      "price": "11323.9"
+    },
+    {
+      "liquidity": 50,
+      "price": "11324.1"
+    },
+    {
+      "liquidity": 50,
+      "price": "11324.3"
+    }
+  ],
+  "instrument": "DE30_EUR",
+  "type": "PRICE",
+  "bids": [
+    {
+      "liquidity": 25,
+      "price": "11321.9"
+    },
+    {
+      "liquidity": 25,
+      "price": "11321.8"
+    },
+    {
+      "liquidity": 50,
+      "price": "11321.7"
+    },
+    {
+      "liquidity": 50,
+      "price": "11321.5"
+    },
+    {
+      "liquidity": 50,
+      "price": "11321.3"
+    }
+  ],
+  "closeoutBid": "11321.3",
+  "closeoutAsk": "11324.3"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:29:37.876339700Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:29:42.877500490Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:29:47.878422032Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:29:52.879384594Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:29:57.880206806Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:30:02.881170649Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:30:07.882164058Z"
+},
+{
+  "type": "HEARTBEAT",
+  "time": "2019-03-23T08:30:12.883107786Z"
+}
