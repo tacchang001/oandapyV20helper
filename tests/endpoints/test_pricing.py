@@ -8,11 +8,12 @@ class TestPricing(TestCase):
 
     def test_to_dataframe(self):
         data_dict = [
-            'test_pricing.json',
-            'test_pricing.json'
+            'test_pricing01.json',
+            'test_pricing02.json',
+            'test_pricing03.json'
         ]
         for _file_name in data_dict:
             with open(_file_name, 'r') as f:
-                json_data = json.load(f)
-                result = to_dataframe(json_data)
+                raw_dict = json.load(f)
+                result = to_dataframe(raw_dict)
                 print(result)
