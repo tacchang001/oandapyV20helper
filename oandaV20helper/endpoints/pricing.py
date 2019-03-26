@@ -29,20 +29,20 @@ def _average_of_price(prices):
     return price, volume
 
 
-def to_dataframe(raw_dict):
-    candle = None
+def to_bidask(raw_dict):
+    bidask = None
     if raw_dict['type'] == 'PRICE':
-        candle = pd.DataFrame()
-        candle['tradeable'] = [raw_dict['tradeable']]
-        candle['tradeable'] = candle['tradeable'].astype('bool')
-        candle['instrument'] = raw_dict['instrument']
-        candle['time'] = raw_dict['time']
-        candle['time'] = pd.to_datetime(candle['time'], format=_TIMESTAMP_FORMAT)
-        candle['asks'], candle['volumeAsk'] = _average_of_price(raw_dict['asks'])
-        candle['bids'], candle['volumeBid'] = _average_of_price(raw_dict['bids'])
-        candle['closeoutBid'] = raw_dict['closeoutBid']
-        candle['closeoutAsk'] = raw_dict['closeoutAsk']
+        bidask = pd.DataFrame()
+        bidask['tradeable'] = [raw_dict['tradeable']]
+        bidask['tradeable'] = bidask['tradeable'].astype('bool')
+        bidask['instrument'] = raw_dict['instrument']
+        bidask['time'] = raw_dict['time']
+        bidask['time'] = pd.to_datetime(bidask['time'], format=_TIMESTAMP_FORMAT)
+        bidask['asks'], bidask['volumeAsk'] = _average_of_price(raw_dict['asks'])
+        bidask['bids'], bidask['volumeBid'] = _average_of_price(raw_dict['bids'])
+        bidask['closeoutBid'] = raw_dict['closeoutBid']
+        bidask['closeoutAsk'] = raw_dict['closeoutAsk']
 
-    return candle
+    return bidask
 
 
