@@ -1,21 +1,53 @@
 {
-  "tradeable": false,
-  "time": "2019-03-23T02:07:05.003617191Z",
-  "status": "non-tradeable",
-  "asks": [
-    {
-      "liquidity": 10000000,
-      "price": "1.12345"
-    }
-  ],
-  "instrument": "EUR_USD",
-  "type": "PRICE",
   "bids": [
     {
-      "liquidity": 10000000,
-      "price": "1.12333"
+      "price": "1316.719",
+      "liquidity": 1000
+    },
+    {
+      "price": "1316.639",
+      "liquidity": 1000
+    },
+    {
+      "price": "1316.599",
+      "liquidity": 1000
+    },
+    {
+      "price": "1316.519",
+      "liquidity": 1000
+    },
+    {
+      "price": "1316.419",
+      "liquidity": 1000
     }
   ],
-  "closeoutBid": "1.12222",
-  "closeoutAsk": "1.12344"
+  "time": "2019-03-26T07:30:01.776197757Z",
+  "status": "tradeable",
+  "type": "PRICE",
+  "closeoutAsk": "1317.587",
+  "instrument": "XAU_USD",
+  "closeoutBid": "1316.119",
+  "asks": [
+    {
+      "price": "1316.987",
+      "liquidity": 1000
+    },
+    {
+      "price": "1317.067",
+      "liquidity": 1000
+    },
+    {
+      "price": "1317.107",
+      "liquidity": 1000
+    },
+    {
+      "price": "1317.187",
+      "liquidity": 1000
+    },
+    {
+      "price": "1317.287",
+      "liquidity": 1000
+    }
+  ],
+  "tradeable": true
 }
