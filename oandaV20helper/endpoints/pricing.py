@@ -29,20 +29,26 @@ def _average_of_price(prices):
     return price, volume
 
 
-def to_bidask(raw_dict):
-    bidask = None
-    if raw_dict['type'] == 'PRICE':
-        bidask = pd.DataFrame()
-        bidask['tradeable'] = [raw_dict['tradeable']]
-        bidask['tradeable'] = bidask['tradeable'].astype('bool')
-        bidask['instrument'] = raw_dict['instrument']
-        bidask['time'] = raw_dict['time']
-        bidask['time'] = pd.to_datetime(bidask['time'], format=_TIMESTAMP_FORMAT)
-        bidask['asks'], bidask['volumeAsk'] = _average_of_price(raw_dict['asks'])
-        bidask['bids'], bidask['volumeBid'] = _average_of_price(raw_dict['bids'])
-        bidask['closeoutBid'] = raw_dict['closeoutBid']
-        bidask['closeoutAsk'] = raw_dict['closeoutAsk']
+def to_dom(raw_dict):
+    """
+    OANDA Streamから得られる板情報（Depth of Market）をオリジナルの板情報に変換する。
 
-    return bidask
+    :param raw_dict: OANDA Streamから受信した板情報
+    :return: オリジナルの板情報
+    """
+    dom = None
+    if raw_dict['type'] == 'PRICE':
+        dom = pd.DataFrame()
+        dom['tradeable'] = [raw_dict['tradeable']]
+        dom['tradeable'] = dom['tradeable'].astype('bool')
+        dom['instrument'] = raw_dict['instrument']
+        dom['time'] = raw_dict['time']
+        dom['time'] = pd.to_datetime(dom['time'], format=_TIMESTAMP_FORMAT)
+        dom['asks'], dom['volumeAsk'] = _average_of_price(raw_dict['asks'])
+        dom['bids'], dom['volumeBid'] = _average_of_price(raw_dict['bids'])
+        dom['closeoutBid'] = raw_dict['closeoutBid']
+        dom['closeoutAsk'] = raw_dict['closeoutAsk']
+
+    return dom
 
 

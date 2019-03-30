@@ -1,7 +1,7 @@
 from unittest import TestCase
 import json
 
-from oandaV20helper.endpoints.pricing import to_bidask
+from oandaV20helper.endpoints.pricing import to_dom
 
 
 class TestPricing(TestCase):
@@ -15,5 +15,5 @@ class TestPricing(TestCase):
         for _file_name in data_dict:
             with open(_file_name, 'r') as f:
                 raw_dict = json.load(f)
-                result = to_bidask(raw_dict)
+                result = to_dom(raw_dict)
                 print(result)
