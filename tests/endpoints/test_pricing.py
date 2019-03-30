@@ -18,5 +18,5 @@ class TestPricing:
             print(result)
 
 
-if __name__ == '__main__':
-    pytest.main(['-v', __file__])
+# if __name__ == '__main__':
+#     pytest.main(['-v', __file__])
